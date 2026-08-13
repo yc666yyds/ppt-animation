@@ -1,0 +1,6 @@
+interface:
+  display_name: "PPT Animate"
+  short_description: "Add click-triggered animations to PowerPoint presentations"
+  icon_small: "./assets/ppt-animate-small.svg"
+  icon_large: "./assets/ppt-animate-large.svg"
+  default_prompt: "Create or add animations to a PowerPoint presentation using -animate."

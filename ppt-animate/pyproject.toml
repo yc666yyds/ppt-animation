@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppt-animate"
+version = "2.0.0"
+description = "Add click-triggered animations to PowerPoint presentations. Supports both COM automation and pure XML manipulation."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "ppt-animate contributors"}
+]
+keywords = ["powerpoint", "ppt", "animation", "presentation", "com", "xml"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "python-pptx>=1.0.0",
+]
+
+[project.optional-dependencies]
+com = ["pywin32>=300"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+ppt-animate = "ppt_animate.core:main"
+
+[tool.setuptools.packages.find]
+where = ["scripts"]
+include = ["ppt_animate*"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
